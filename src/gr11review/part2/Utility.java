@@ -40,4 +40,20 @@ public class Utility{
     }
     return nums;
   } 
+  public static String longestWord(String filenametxt){
+    String longest = "";
+    try (BufferedReader keyboard = new BufferedReader(new FileReader(filenametxt))){
+      int length = 0;
+      String st = "";
+      while((st = keyboard.readLine()) != null){
+        if(st.length() > length){
+          longest = st;
+          length = st.length();
+        }
+      }
+    }catch (Exception e){
+      System.out.println("Something went wrong.");
+    }
+    return longest;
+  }
 }
