@@ -16,4 +16,41 @@ public class Utility{
     }
     return finalOut;
   }
+  public static int[] tenRun(int[] nums){
+    int newNum = 0;
+    for(int i = 0; i < nums.length-1; i++){
+      if(nums[i] % 10 == 0){
+        newNum = nums[i];
+        if(i < nums.length-1){
+          i++; 
+        }
+        while(nums[i] % 10 != 0){
+          nums[i] = newNum;
+          if(i < nums.length-1){
+            i++;
+          }
+        }
+        if(nums[i] % 10 == 0){
+            i--;
+          }
+      }
+    }
+    return nums;
+  } 
+  public static String longestWord(String filenametxt){
+    String longest = "";
+    try (BufferedReader keyboard = new BufferedReader(new FileReader(filenametxt))){
+      int length = 0;
+      String st = "";
+      while((st = keyboard.readLine()) != null){
+        if(st.length() >= length){
+          longest = st;
+          length = st.length();
+        }
+      }
+    }catch (Exception e){
+      System.out.println("Something went wrong.");
+    }
+    return longest;
+  }
 }
