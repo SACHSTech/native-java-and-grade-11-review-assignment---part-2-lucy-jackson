@@ -53,4 +53,19 @@ public class Utility{
     }
     return longest;
   }
+  public static boolean linearIn(int[] outer, int[] inner){
+    int s = 0;
+    for(int i = 0; i < inner.length-1; i++){
+      if(inner[i] < outer[s]){
+        return false;
+      }
+      while(inner[i] >= outer[s]){
+        if(inner[i] < outer[s]){
+          return false;
+        }
+        s++;
+      }
+    }
+    return true;
+  }
 }
