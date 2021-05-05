@@ -68,4 +68,39 @@ public class Utility{
     }
     return true;
   }
+  public static void pascalTri(int i, int j){
+    /* i is how many rows
+    * j is how many columns
+    */
+    int[][] triangle = new int [i][j];
+        for(int x = 0; x < i; x++){
+          triangle[x][0] = 1;
+        }for(int x = 0; x < j; x++){
+          triangle[0][x] = 1;
+        }
+        if(i > 1 && j > 1){
+          for(int x = 1; x<i; x++){
+            for(int y = 1; y<j; y++){
+              triangle[x][y] = (triangle[x-1][y]+triangle[x][y-1]);
+            }
+          }
+        }
+    try{
+      FileWriter writer = new FileWriter("src\\gr11review\\part2\\pascalOut.txt");
+      BufferedWriter fileWrite = new BufferedWriter(writer);
+      for(int x = 0; x<i; x++){
+        for(int y = 0; y<j; y++){
+          fileWrite.write(Integer.toString(triangle[x][y]));
+          if(y<j-1){
+            fileWrite.write(",");
+          }
+        }
+        fileWrite.write('\n');
+      }
+      fileWrite.write('\n');
+      fileWrite.close();
+    }catch (Exception e){
+      System.out.println("Something went wrong.");
+    }      
+  }
 }
