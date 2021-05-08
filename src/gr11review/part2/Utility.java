@@ -16,22 +16,30 @@ public class Utility {
 
       // initializing variables
       int intCount;
-      int length = strInput.length();
+      int intlength;
       int intSum = 0;
       String strNum = "";
+      intlength = str.length();
 
+      // Checks each character in String 
+      for (intCount = 0; intCount < intlength; intCount++){
+        
+        // Checks if current character is a digit
+        if (Character.isDigit(str.charAt(intCount))) {
 
-      
+          if (intCount < intlength - 1 && Character.isDigit(str.charAt(intCount + 1))){
+            strNum += str.charAt(intCount);
+          }  
 
-
-
-
-
-
-
+          else {
+            strNum += str.charAt(intCount);
+            intSum += Integer.parseInt(strNum);
+            strNum = "";
+          }
+        }
       }
-    return intSum; 
 
+    return intSum; 
   }
 
 /** 
