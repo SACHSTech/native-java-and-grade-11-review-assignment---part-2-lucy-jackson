@@ -16,22 +16,18 @@ public class Utility {
 
       // initializing variables
       int intCount;
-      int intCount2;
+      int length = strInput.length();
       int intSum = 0;
+      String strNum = "";
+
+
       
 
-      for (intCount = 0; intCount < str.length(); intCount++) {
-        
-        if (Character.isDigit(strCharAt(intCount))) {
-          
-          // we start at intCount2 + 1 because we know intCount has a digit 
 
-          for (intCount2 = intCount + 1; intCount2 < str.length() && Character.isDigit(strChartAt(intCount2)); intCount2++);
 
-          intSum += Integer.parseInt(str.subString(intCount, intCount2));
-          intCount = intCount2;
 
-        }
+
+
 
       }
     return intSum; 
@@ -41,21 +37,10 @@ public class Utility {
 /** 
 * Return the word that is alphabetically first
 * @param filenametxt which is the name of the file txt that will be anaylzed 
+* @return the word that is alphabetically first in the filename.txt file 
 * @author J. Cheung
 */
 
-  public static String alphaWord(String filenametxt) throws IOException {
-
-
-
-
-
-
-
-
-
-
-  }
 
 
 
