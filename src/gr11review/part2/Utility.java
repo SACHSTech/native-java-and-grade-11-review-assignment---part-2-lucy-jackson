@@ -49,11 +49,7 @@ public class Utility {
 * @author J. Cheung
 */
 
-  public static String alphaWord (String filenametxt) throws IOException {
-    
-
-
-  }
+ 
     
 /**
 * Return of an array where every instance of the given value is replaced 
@@ -86,6 +82,44 @@ public class Utility {
 
   }
 
+  /**
+  * Returns either an array that can be split into equal sums 
+  * @param anayalzing the num of array
+  * @return boolean of weather it can be split into an equal sum
+  * @author J. Cheung
+  */
+
+  public static boolean canBalance(int[] nums) {
+
+    // initializing variables
+    int intLength;
+    int intSum;
+    int intSum2;
+    int intCount;
+    intLength = nums.length;
+    intSum = 0;
+    intSum2 = 0;
     
+
+    // Obtaining the sums of all numbers in the array
+    for (intCount = 0; intCount < intLength; intCount++) {
+      intSum += nums[intCount];
+    }
+
+    // Looping the array to keep track of the sum
+    for (intCount = 0; intCount < intLength; intCount++) {
+      intSum2 += nums[intCount];
+
+      // return true if the array is equal 
+      if (intSum == intSum2) 
+       return true;
+    
+    }
+
+    // as back up
+    return false;
+
+  }
+
     
 }
