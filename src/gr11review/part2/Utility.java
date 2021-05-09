@@ -138,7 +138,7 @@ public class Utility {
 
     // initialzing variables
 
-    int[][] intBox = new int [n][n];
+    int[][] intBox = new int[n][n];
     int intCount;
     int intCount2;
 
@@ -148,15 +148,15 @@ public class Utility {
 
       for (intCount2 = 0; intCount2 < n; intCount2++){
 
-        if (intCount + intCount2 < n - 1) {
+        if (intCount2 < n - intCount - 1) {
           intBox[intCount][intCount2] = 0;
         }
 
-        else if (intCount + intCount2 == n - 1) {
+        else if (intCount2 == n - intCount - 1) {
           intBox[intCount][intCount2] = 1;
         }
 
-        else if (intCount + intCount2 > n - 1) {
+        else if (intCount2 == n - intCount - 1) {
           intBox[intCount][intCount2] = 2;
         }
 
@@ -164,7 +164,7 @@ public class Utility {
 
     }
   
-    for (intCount = 0; intCount < n; intCount++){
+    for (intCount = 0; intCount < n; intCount++) {
       
       for (intCount2 = 0; intCount2 < n; intCount2++){
         theBox.print(intBox[intCount][intCount2]);
