@@ -72,7 +72,7 @@ public class Utility {
     // loops through the array 
     for (int intCount = 1; intCount < intLength -1; intCount++){
       
-      // If the num = to the value and not the the num to th left and right it will set the current number = to the greatest number of the two. 
+      // If the num = to the value and not the the num to th left and right it will set the current number = to the greatest number of the two
       if (nums[intCount] == value) {
         if (nums[intCount - 1] != nums[intCount] && nums[intCount + 1] != nums[intCount]) {
           nums[intCount] = Math.max(nums[intCount -1], nums[intCount +1]);
