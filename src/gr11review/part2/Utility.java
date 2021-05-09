@@ -121,5 +121,64 @@ public class Utility {
 
   }
 
-    
+  /**
+  * Given an interger a two dimensional array of size (nxn) is created with comma between
+  * The positions on the minor diagonal (from the upper right to the lower left corner)    receive 1 .
+  * The positions above this diagonal receive 0 .
+  * The positions below the diagonal receive 2 .
+  * @param n the num that determines the size of array
+  * @author J. Cheung
+  */
+
+  public static void diagonal(int n) throws IOException {
+
+    // printwriter
+
+    PrintWriter theBox = new PrintWriter (new FileWriter("src/gr11review/part2/diagonalOut.txt",));
+
+    // initialzing variables
+
+    int[][] intBox = new int [n][n];
+    int intCount;
+    int intCount2;
+
+    // Analyzing each row of the box 
+
+    for (intCount = 0; intCount < n; intCount++) {
+
+      for (intCount2 = 0; intCount2 < n; intCount2++){
+
+        if (intCount + intCount2 < n - 1) {
+          intBox[intCount][intCount2] = 0;
+        }
+
+        else if (intCount + intCount2 == n - 1) {
+          intBox[intCount][intCount2] = 1;
+        }
+
+        else if (intCount + intCount2 > n - 1) {
+          intBox[intCount][intCount2] = 2;
+        }
+
+      }
+
+    }
+  
+    for (intCount = 0; intCount < n; intCount++){
+      
+      for (intCount2 = 0; intCount2 < n; intCount2++){
+        theBox.print(intBox[intCount][intCount2]);
+        if (intCount2 != n - 1) {
+          theBox.print(",");
+        }
+      }
+
+    theBox.println();
+    }
+
+    theBox.close();
+}
+
+
+
 }
