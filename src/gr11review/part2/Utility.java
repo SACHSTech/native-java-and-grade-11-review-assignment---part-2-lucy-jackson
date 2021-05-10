@@ -54,37 +54,37 @@ public class Utility {
 * @author J. Cheung
 */
 
-public static String alphaWord(String filenametxt) throws IOException {
+  public static String alphaWord(String filenametxt) throws IOException {
 
-  BufferedReader key = new BufferedReader(new FileReader(filenametxt));
-  
-  // initializing variables
-
-  String strFileLine;
-  String strAlphabetical;
-  strAlphabetical = key.readLine();
-
-  // if the file is empty and has nothing in it return 
-  if (strAlphabetical == null){
-    key.close();
-    return "";
-  }
-
-  strFileLine = "";
-
-  // Going through each string line of the file
-
-  while (strFileLine != null) {
+    BufferedReader key = new BufferedReader(new FileReader(filenametxt));
     
-    strFileLine = key.readLine();
+    // initializing variables
 
-    if (strFileLine != null && strAlphabetical.compareToIgnoreCase(strFileLine) > 0){
-     
-      strAlphabetical = strFileLine;
+    String strFileLine;
+    String strAlphabetical;
+    strAlphabetical = key.readLine();
 
+    // if the file is empty and has nothing in it return 
+    if (strAlphabetical == null){
+      key.close();
+      return "";
     }
 
-  }
+    strFileLine = "";
+
+    // Going through each string line of the file
+
+    while (strFileLine != null) {
+      
+      strFileLine = key.readLine();
+
+      if (strFileLine != null && strAlphabetical.compareToIgnoreCase(strFileLine) > 0){
+      
+        strAlphabetical = strFileLine;
+
+      }
+
+    }
 
   //closing file and returning string
   key.close();
