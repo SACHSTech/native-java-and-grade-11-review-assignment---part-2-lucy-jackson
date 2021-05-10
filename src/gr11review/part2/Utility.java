@@ -49,7 +49,33 @@ public class Utility {
 * @author J. Cheung
 */
 
- 
+public static String alphaWord(String filenametxt) throws IOException {
+
+  BufferedReader key = new BufferedReader(new FileReader(filenametxt));
+  
+  // initializing variables
+
+  String strFileLine = "";
+  String strAlphabetical = key.readLine();
+
+  while (strFileLine != null) {
+    
+    strFileLine = key.readLine();
+
+    if (strFileLine != null && strAlphabetical.compareToIgnoreCase(strFileLine) > 0){
+     
+      strAlphabetical = strFileLine;
+
+    }
+
+  }
+
+  return strAlphabetical;
+
+
+}
+
+
     
 /**
 * Return of an array where every instance of the given value is replaced 
@@ -134,7 +160,7 @@ public class Utility {
 
     // printwriter
 
-    PrintWriter theBox = new PrintWriter (new FileWriter("src/gr11review/part2/diagonalOut.txt",));
+    PrintWriter theBox = new PrintWriter (new FileWriter("src/gr11review/part2/diagonalOut.txt", true));
 
     // initialzing variables
 
