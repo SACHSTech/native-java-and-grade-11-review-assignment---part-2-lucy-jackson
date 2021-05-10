@@ -200,7 +200,7 @@ public static String alphaWord(String filenametxt) throws IOException {
           intBox[intCount][intCount2] = 1;
         }
 
-        else if (intCount2 == n - intCount - 1) {
+        else {
           intBox[intCount][intCount2] = 2;
         }
 
