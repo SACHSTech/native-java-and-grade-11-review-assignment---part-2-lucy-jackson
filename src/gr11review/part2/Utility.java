@@ -189,6 +189,9 @@ public static String alphaWord(String filenametxt) throws IOException {
       }
 
     }
+
+    // anaylzing to print to text file
+    // Goes through every row
   
     for (intCount = 0; intCount < n; intCount++) {
       
@@ -199,9 +202,10 @@ public static String alphaWord(String filenametxt) throws IOException {
         }
       }
 
-    theBox.println();
+    theBox.println("");
     }
 
+    // closing the file
     theBox.close();
 }
 
