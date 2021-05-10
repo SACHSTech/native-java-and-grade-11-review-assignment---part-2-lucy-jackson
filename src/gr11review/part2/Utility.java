@@ -1,6 +1,11 @@
 package gr11review.part2;
 import java.io.*;
+import java.util.*;
 
+/**
+* java files of metthods
+* @author: J. Cheung
+*/
 
 public class Utility {
 
@@ -55,8 +60,19 @@ public static String alphaWord(String filenametxt) throws IOException {
   
   // initializing variables
 
-  String strFileLine = "";
-  String strAlphabetical = key.readLine();
+  String strFileLine;
+  String strAlphabetical;
+  strAlphabetical = key.readLine();
+
+  // if the file is empty and has nothing in it return 
+  if (strAlphabetical == null){
+    key.close();
+    return "";
+  }
+
+  strFileLine = "";
+
+  // Going through each string line of the file
 
   while (strFileLine != null) {
     
@@ -70,6 +86,8 @@ public static String alphaWord(String filenametxt) throws IOException {
 
   }
 
+  //closing file and returning string
+  key.close();
   return strAlphabetical;
 
 
