@@ -173,7 +173,7 @@ public class Utility {
 
     // printwriter
 
-    PrintWriter theBox = new PrintWriter (new FileWriter("src/gr11review/part2/diagonalOut.txt", true));
+    PrintWriter theBox = new PrintWriter (new FileWriter("diagonalOut.txt", true));
 
     // initialzing variables
 
@@ -367,7 +367,7 @@ public class Utility {
         }
     try{
       // create a new file to write in
-      FileWriter writer = new FileWriter("src\\gr11review\\part2\\pascalOut.txt");
+      FileWriter writer = new FileWriter("pascalOut.txt");
       BufferedWriter fileWrite = new BufferedWriter(writer);
       // iterate over both the column and row to write each value of the array into the file
       for(int x = 0; x<i; x++){
